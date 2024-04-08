@@ -1621,6 +1621,21 @@ register_conv_template(
 )
 
 
+# Ghost
+# reference: https://huggingface.co/ghost-x/ghost-7b-alpha/blob/main/tokenizer_config.json#L36
+register_conv_template(
+    Conversation(
+        name="ghost",
+        system_template="<|system|>\n{system_message}",
+        roles=("<|user|>", "<|assistant|>"),
+        sep_style=SeparatorStyle.CHATML,
+        sep="</s>",
+        stop_token_ids=[2],
+        stop_str="</s>",
+    )
+)
+
+
 if __name__ == "__main__":
     from fastchat.conversation import get_conv_template
 
