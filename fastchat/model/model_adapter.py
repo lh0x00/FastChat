@@ -2308,7 +2308,7 @@ class CllmAdapter(BaseModelAdapter):
 
 
 class GhostAdapter(BaseModelAdapter):
-    """The model adapter for Ghost (e.g. HuggingFaceH4/Ghost-7b-alpha)"""
+    """The model adapter for Ghost (e.g. ghost-x/ghost-7b-alpha)"""
 
     def match(self, model_path: str):
         return "ghost" in model_path.lower()
