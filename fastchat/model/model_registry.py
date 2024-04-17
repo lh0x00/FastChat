@@ -682,3 +682,10 @@ register_model_info(
     "https://huggingface.co/cllm",
     "consistency-llm is a new generation of parallel decoder LLMs with fast generation speed.",
 )
+
+register_model_info(
+    ["ghost-7b-alpha"],
+    "Ghost",
+    "https://huggingface.co/ghost-x/ghost-7b-alpha",
+    "The next generation of large language models focuses on optimization for excellent reasoning, multi-task knowledge, and multilingual.",
+)

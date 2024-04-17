@@ -100,7 +100,7 @@ After these steps, the new model should be compatible with most FastChat feature
   loading multiple peft models, you can have them share the base model weights by
   setting the environment variable `PEFT_SHARE_BASE_WEIGHTS=true` in any model
   worker.
-
+- [ghost-x/ghost-7b-alpha](https://huggingface.co/ghost-x/ghost-7b-alpha)
 
 ## API-Based Models
 To support an API-based model, consider learning from the existing OpenAI example.
