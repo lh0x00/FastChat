@@ -40,13 +40,13 @@ one_score_pattern_backup = re.compile("\[(\d+\.?\d*)\]")
 temperature_config = {
     "writing": 0.4,
     "roleplay": 0.4,
-    "extraction": 0.1,
-    "math": 0.1,
-    "coding": 0.1,
-    "reasoning": 0.1,
+    "extraction": 0.2,
+    "math": 0.2,
+    "coding": 0.2,
+    "reasoning": 0.2,
     "stem": 0.2,
     "humanities": 0.2,
-    "arena-hard-200": 0.1,
+    "arena-hard-200": 0.2,
 }
 
 reverse_model_map = {
