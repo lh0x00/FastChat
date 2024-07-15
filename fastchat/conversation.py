@@ -64,7 +64,7 @@ class Conversation:
     # The number of few shot examples
     offset: int = 0
     # The separator style and configurations
-    sep_style: SeparatorStyle = SeparatorStyle.ADD_COLON_SINGLE
+    sep_style: SeparatorStyle = SeparatorStyle.GHOST8B
     sep: str = "\n"
     sep2: str = None
     # Stop criteria (the default one is EOS token)
