@@ -2561,6 +2561,7 @@ register_model_adapter(CllmAdapter)
 register_model_adapter(RekaAdapter)
 register_model_adapter(SmaugChatAdapter)
 register_model_adapter(Llama3Adapter)
+register_model_adapter(Ghost8BAdapter)
 
 # After all adapters, try the default base adapter.
 register_model_adapter(BaseModelAdapter)
