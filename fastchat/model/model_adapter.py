@@ -2460,6 +2460,7 @@ class Ghost8BAdapter(BaseModelAdapter):
 
     def get_default_conv_template(self, model_path: str) -> Conversation:
         print("get_default_conv_template.model_path:\n", model_path)
+        print("get_default_conv_template.xxxxx:\n", get_conv_template("ghost-8b"))
         return get_conv_template("ghost-8b")
 
 
