@@ -2089,6 +2089,16 @@ register_conv_template(
     )
 )
 
+
+print("-- Ghost template --")
+conv = get_conv_template("claude")
+conv.append_message(conv.roles[0], "Hello!")
+conv.append_message(conv.roles[1], "Hi!")
+conv.append_message(conv.roles[0], "How are you?")
+conv.append_message(conv.roles[1], None)
+print(conv.get_prompt())
+
+
 if __name__ == "__main__":
     from fastchat.conversation import get_conv_template
 
