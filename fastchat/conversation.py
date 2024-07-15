@@ -2100,6 +2100,8 @@ register_conv_template(
     )
 )
 
+print(conv_templates)
+
 if __name__ == "__main__":
     from fastchat.conversation import get_conv_template
 
