@@ -1225,11 +1225,11 @@ register_conv_template(
         name="ghost-8b",
         system_template="<|role:begin|>system<|role:end|>\n{system_message}<|cos|>",
         roles=(
-            "<|role:begin|>user<|role:end|>\n",
-            "<|role:begin|>assistant<|role:end|>\n",
+            "<|role:begin|>user<|role:end|>",
+            "<|role:begin|>assistant<|role:end|>",
         ),
         sep_style=SeparatorStyle.CHATML,
-        sep="",
+        sep="<|cos|>",
         stop_str="<|cos|>",
         stop_token_ids=[128001, 128003, 128009],
     )
