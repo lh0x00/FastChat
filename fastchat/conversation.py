@@ -38,6 +38,7 @@ class SeparatorStyle(IntEnum):
     YUAN2 = auto()
     GEMMA = auto()
     CLLM = auto()
+    GHOST8B = auto()
     DEFAULT = auto()
 
 
@@ -310,6 +311,19 @@ class Conversation:
                     ret += role + ": " + message + seps[i % 2]
                 else:
                     ret += role + ":"
+            return ret
+        elif self.sep_style == SeparatorStyle.GHOST8B:
+            ret = "<|bos|>"
+            if self.system_message:
+                ret += system_prompt
+            else:
+                ret += ""
+            for i, (role, message) in enumerate(self.messages):
+                if message:
+                    ret += f"\n<|role:begin|>{role}<|role:end|>\n"
+                    ret += f"{message.strip()}<|cos|>"
+                else:
+                    ret += f"\n<|role:begin|>{role}<|role:end|>\n"
             return ret
         elif self.sep_style == SeparatorStyle.DEFAULT:
             ret = system_prompt + "\n"
@@ -2071,6 +2085,18 @@ register_conv_template(
         roles=("user", "assistant"),
         sep_style=None,
         sep=None,
+    )
+)
+
+register_conv_template(
+    Conversation(
+        name="ghost-8b",
+        system_template="<|role:begin|>system<|role:end|>\n{system_message}<|cos|>",
+        roles=("user", "assistant"),
+        sep_style=SeparatorStyle.GHOST8B,
+        sep="",
+        stop_str="<|cos|>",
+        stop_token_ids=[128001, 128003, 128009],
     )
 )
 
