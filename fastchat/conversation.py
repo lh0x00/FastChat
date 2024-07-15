@@ -1223,7 +1223,7 @@ register_conv_template(
 register_conv_template(
     Conversation(
         name="ghost-8b",
-        system_template="<|role:begin|>system<|role:end|>\n{system_message}<|cos|>",
+        system_template="<|role:begin|>system<|role:end|>\n{system_message}",
         roles=(
             "<|role:begin|>user<|role:end|>",
             "<|role:begin|>assistant<|role:end|>",
