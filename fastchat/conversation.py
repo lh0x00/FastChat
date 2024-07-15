@@ -2091,7 +2091,7 @@ register_conv_template(
 
 
 print("-- Ghost template --")
-conv = get_conv_template("claude")
+conv = get_conv_template("ghost-8b")
 conv.append_message(conv.roles[0], "Hello!")
 conv.append_message(conv.roles[1], "Hi!")
 conv.append_message(conv.roles[0], "How are you?")
