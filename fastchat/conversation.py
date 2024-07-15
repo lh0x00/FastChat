@@ -1235,18 +1235,6 @@ register_conv_template(
     )
 )
 
-register_conv_template(
-    Conversation(
-        name="zephyr",
-        system_template="<|role:begin|>system<|role:end|>\n{system_message}<|cos|>",
-        roles=("<|user|>", "<|assistant|>"),
-        sep_style=SeparatorStyle.CHATML,
-        sep="<|cos|>",
-        stop_str="<|cos|>",
-        stop_token_ids=[128001, 128003, 128009],
-    )
-)
-
 # MetaMath default template
 # reference: https://github.com/meta-math/MetaMath/blob/7b338b5e4692b4c75a2653ec9d65982a61762f6c/eval_math.py#L58
 register_conv_template(
