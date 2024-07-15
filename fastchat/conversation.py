@@ -64,7 +64,7 @@ class Conversation:
     # The number of few shot examples
     offset: int = 0
     # The separator style and configurations
-    sep_style: SeparatorStyle = SeparatorStyle.GHOST8B
+    sep_style: SeparatorStyle = SeparatorStyle.ADD_COLON_SINGLE
     sep: str = "\n"
     sep2: str = None
     # Stop criteria (the default one is EOS token)
@@ -1234,6 +1234,18 @@ register_conv_template(
     )
 )
 
+register_conv_template(
+    Conversation(
+        name="ghost-8b",
+        system_template="<|role:begin|>system<|role:end|>\n{system_message}<|cos|>",
+        roles=("user", "assistant"),
+        sep_style=SeparatorStyle.GHOST8B,
+        sep="",
+        stop_str="<|cos|>",
+        stop_token_ids=[128001, 128003, 128009],
+    )
+)
+
 # MetaMath default template
 # reference: https://github.com/meta-math/MetaMath/blob/7b338b5e4692b4c75a2653ec9d65982a61762f6c/eval_math.py#L58
 register_conv_template(
@@ -2085,18 +2097,6 @@ register_conv_template(
         roles=("user", "assistant"),
         sep_style=None,
         sep=None,
-    )
-)
-
-register_conv_template(
-    Conversation(
-        name="ghost-8b",
-        system_template="<|role:begin|>system<|role:end|>\n{system_message}<|cos|>",
-        roles=("user", "assistant"),
-        sep_style=SeparatorStyle.GHOST8B,
-        sep="",
-        stop_str="<|cos|>",
-        stop_token_ids=[128001, 128003, 128009],
     )
 )
 
