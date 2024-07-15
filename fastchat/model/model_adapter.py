@@ -2449,6 +2449,7 @@ class Ghost8BAdapter(BaseModelAdapter):
     """The model adapter for Ghost 8B"""
 
     def match(self, model_path: str):
+        print("match.model_path:\n", model_path)
         return "ghost-8b" in model_path.lower()
 
     def load_model(self, model_path: str, from_pretrained_kwargs: dict):
@@ -2458,6 +2459,7 @@ class Ghost8BAdapter(BaseModelAdapter):
         return model, tokenizer
 
     def get_default_conv_template(self, model_path: str) -> Conversation:
+        print("get_default_conv_template.model_path:\n", model_path)
         return get_conv_template("ghost-8b")
 
 
